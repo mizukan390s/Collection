@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class Task {	
 	
-	LocalDate[] ld = {
+	LocalDate[] date = {
 			LocalDate.of(2021,10,21),
 			LocalDate.of(2021,9,15),
 			LocalDate.of(2021,12,4),
@@ -13,7 +13,7 @@ public class Task {
 			LocalDate.of(2021,11,9)
 			};
 	
-	String[] task = {
+	String[] content = {
 			"牛乳を買う。",
 			"○○社面談。",
 			"手帳を買う。",
