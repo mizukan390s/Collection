@@ -3,6 +3,7 @@ package practice;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Chapter5 {
@@ -22,7 +23,24 @@ public class Chapter5 {
 		list.add(task4);
 		list.add(task5);
 
-		Collections.sort(list, new TaskComp());
+		Collections.sort(
+			list,
+			new Comparator<Task>() {
+				@Override
+				public int compare(Task c1, Task c2) {
+					if (c1.getDate().isBefore(c2.getDate())) {
+						return -1;
+					} else if (c1.getDate().isAfter(c2.getDate())) {
+						return 1;
+					} else {
+						return c1.getContent().compareTo(c2.getContent());
+					}
+				}
+			}
+				
+				
+				
+		);
 
 		for (Task x : list) {
 			System.out.println(x.getDate() + ":" + x.getContent());
